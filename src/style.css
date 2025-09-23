@@ -47,6 +47,10 @@ html.dark {
    * which you can set, to change the color of the icon in the switch */
     --theme-switch-icon-color: #ffffff;
   }
+
+  header.sticky-top {
+    background-color: rgb(90, 64, 64);
+  }
 }
 
 html.light {
@@ -64,6 +68,10 @@ html.light {
    * which you can set, to change the color of the icon in the switch */
     --theme-switch-icon-color: #000000;
   }
+
+  header.sticky-top {
+    background-color: rgb(228, 191, 191);
+  }
 }
 
 body {
@@ -71,4 +79,16 @@ body {
 }
 
 header {
+  will-change: top, backdrop-filter, background-color, border-top-width,
+    padding-top, padding-bottom, border-radius;
+  transition: all 0.15s ease-in-out;
+}
+
+header.sticky-top {
+  top: 0;
+  backdrop-filter: blur(10px);
+  border-top-width: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 0 0 10px 10px;
 }

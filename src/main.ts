@@ -42,6 +42,7 @@ document.addEventListener("themeToggle", (event: any) => {
 });
 // <./-- Theme-related
 
+// Decrypt email
 var decryptEmail = (encoded: string) => {
     const address = atob(encoded);
     window.open("mailto:" + address);
@@ -54,3 +55,24 @@ document.getElementById('email-link')?.addEventListener('click', (e) => {
         decryptEmail(encoded);
     }
 });
+// <-- Decrypt email
+
+// Sticky header
+const onWindowScroll = () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const header = document.getElementById('header');
+    header?.classList.toggle('sticky-top', scrollTop > 100);
+};
+
+const debounce = (func: () => void, wait: number) => {
+    let timeout: number | undefined;
+    return () => {
+        clearTimeout(timeout);
+        timeout = window.setTimeout(() => {
+            func();
+        }, wait);
+    };
+};
+
+document.addEventListener('scroll', debounce(onWindowScroll, 15));
+// <-- Sticky header
