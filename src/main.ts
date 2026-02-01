@@ -1,5 +1,7 @@
 import './style.css'
 import '@mahozad/theme-switch/dist/theme-switch.min.js';
+import { gsap } from 'gsap';
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 
 /* Theme-related */
 document.addEventListener('DOMContentLoaded', () => {
@@ -76,3 +78,58 @@ const debounce = (func: () => void, wait: number) => {
 
 document.addEventListener('scroll', debounce(onWindowScroll, 15));
 // <-- Sticky header
+
+// Home Hero GSAP 3D Animation
+gsap.registerPlugin(MotionPathPlugin);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const elipses = document.querySelectorAll<SVGEllipseElement>('#home-hero svg ellipse[id^="orbit"]');
+    const electrons = document.querySelectorAll<SVGCircleElement>('#home-hero svg circle[class^="e"]');
+    const paths: SVGPathElement[][] = [];
+
+    elipses.forEach((ellipse, _) => {
+        paths.push(MotionPathPlugin.convertToPath(ellipse));
+    });
+
+    // Ellipsis may have >1 electron, so group them accordingly
+    const electronsMap: { [key: number]: SVGCircleElement[] } = {};
+    electrons.forEach((electron, _) => {
+        const ellipseIndex = parseInt(electron.classList[0].replace('e', '')) - 1;
+        if (!electronsMap[ellipseIndex]) {
+            electronsMap[ellipseIndex] = [];
+        }
+        electronsMap[ellipseIndex].push(electron);
+    });
+
+    // Animate each electron along its corresponding path
+    elipses.forEach((_, index) => {
+        const path = paths[index];
+        const electronsForEllipse = electronsMap[index];
+
+        if (!path || !electronsForEllipse) return;
+
+        electronsForEllipse.forEach((electron, electronIndex) => {
+            // const dir = Math.random() > 0.5 ? 1 : -1;
+
+            const jitter = gsap.utils.random(-0.05, 0.05);
+            const start = electronIndex / electronsForEllipse.length + jitter;
+
+
+            gsap.to(electron, {
+                duration: gsap.utils.random(4, 6), // slightly different durations for each electron
+                repeat: -1,
+                yoyo: true,
+                ease: 'none',
+                motionPath: {
+                    path: path[0],
+                    align: path[0],
+                    alignOrigin: [0.5, 0.5],
+                    autoRotate: false,
+                    start,
+                    end: start + 1
+                }
+            });
+        });
+    });
+});
+// <-- Home Hero GSAP 3D Animation

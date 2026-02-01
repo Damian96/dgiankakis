@@ -45,9 +45,35 @@
 
     <main class="main-wrapper w-full">
 
-      <section id="home-hero" class="home-hero h-screen border-b-1 border-gray-400">
+      <section id="home-hero" class="home-hero h-screen border-b-1 border-gray-400 overflow-hidden">
         <div class="relative w-full h-full 3xl:start-1/10 3xl:min-w-0 3xl:w-8/10 xl:start-1/12 xl:min-w-0 xl:w-10/12 2xs:min-w-full">
-          <div class="absolute inset-0 bg-no-repeat xl:bg-right-bottom xl:bg-size-[auto_65%] 2xs:bg-bottom md:bg-size-[auto_65%] 2xs:bg-size-[auto_55%]" style="background-image: url('/img/me.png');"></div>
+          <div class="w-full md:w-auto xl:w-1/2 2xl:w-auto absolute md:end-[50%] top-100 md:translate-x-[50%] translate-y-[-25%] xl:end-0 xl:top-100 xl:translate-x-[25%] flex justify-center items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="750" height="750" viewBox="0 0 512 512" class="max-w-4/2">
+              <!-- <rect width="100%" height="100%" fill="none" /> -->
+              <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+                  <stop offset="50%" style="stop-color:#FFFFFF;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+              <ellipse id="orbit1" cx="256" cy="256" rx="180" ry="60" fill="none" stroke-width="3"
+                transform="rotate(0,256,256)" class="stroke-black dark:stroke-red-400" />
+              <ellipse id="orbit2" cx="256" cy="256" rx="180" ry="60" fill="none" stroke-width="3"
+                transform="rotate(60,256,256)" class="stroke-black dark:stroke-red-400" />
+              <ellipse id="orbit3" cx="256" cy="256" rx="180" ry="60" fill="none" stroke-width="3"
+                transform="rotate(120,256,256)" class="stroke-black dark:stroke-red-400" />
+              <circle class="e1 fill-red-400 dark:fill-red-400" cx="76.0" cy="256.0" r="8" />
+              <circle class="e3 fill-red-400 dark:fill-red-400" cx="166.0" cy="307.96" r="8" />
+              <circle class="e1 fill-red-400 dark:fill-red-400" cx="76.0" cy="256.0" r="8" />
+              <circle class="e2 fill-red-400 dark:fill-red-400" cx="436.0" cy="256.0" r="8" />
+              <circle class="e2 fill-red-400 dark:fill-red-400" cx="166.0" cy="204.04" r="8" />
+              <circle class="e2 fill-red-400 dark:fill-red-400" cx="346.0" cy="307.96" r="8" />
+              <circle class="e3 fill-red-400 dark:fill-red-400" cx="166.0" cy="307.96" r="8" />
+              <circle class="e3 fill-red-400 dark:fill-red-400" cx="346.0" cy="204.04" r="8" />
+              <text class="fill-black dark:fill-white" x="175" y="340" font-family="Arial Black" font-size="260" font-weight="bold">D</text>
+            </svg>
+          </div>
 
           <div class="absolute xl:start-0 xl:top-2/5 2xs:top-1/5 2xs:w-full xl:text-start 2xs:text-center">
             <h1 class="tracking-widest uppercase 3xl:text-7xl xl:text-6xl md:text-4xl 2xs:text-xl font-semibold dark:text-red-400 text-red-400">Software<br/>Engineer</h1>
@@ -56,7 +82,9 @@
         </div>
       </section>
 
-      <section id="contact" class="home-contact xl:h-screen xl:py-0 md:py-15 border-b-1 border-gray-400">
+      <section id="contact" class="home-contact xl:h-screen xl:py-0 md:py-15 border-b-1 border-gray-400 relative">
+        <div class="2xl:hidden absolute inset-0 bg-no-repeat xl:bg-[position:90%_100%] xl:bg-size-[auto_45%] 2xs:bg-bottom md:bg-size-[auto_65%] 2xs:bg-size-[auto_55%]" style="background-image: url('/img/me.png');"></div>
+
         <div class="relative flex flex-row flex-wrap w-full 3xl:start-1/10 3xl:min-w-0 3xl:w-8/10 xl:start-1/12 xl:min-w-0 xl:w-10/12 2xs:min-w-full 3xl:top-2/7 xl:top-1/5 2xs:top-1/6 2xs:p-4">
           <div class="md:w-1/2 2xs:w-full">
             <h2 class="uppercase font-semibold 3xl:text-5xl xl:text-4xl md:text-2xl 2xs:text-lg dark:text-red-400 text-red-400 3xl:mb-10 md:mb-8 2xs:mb-5 xs:md-4">Get in touch</h2>
