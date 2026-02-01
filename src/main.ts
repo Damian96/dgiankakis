@@ -24,6 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
         && !document.documentElement.classList.contains('light')) {
         document.documentElement.classList.add('light');
     }
+
+    if (theme === 'auto' && !document.documentElement.classList.contains('dark')) {
+        (document.querySelector('theme-switch') as any)?.click();
+    }
 });
 
 document.addEventListener("themeToggle", (event: any) => {
