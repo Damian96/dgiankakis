@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener("themeToggle", (event: any) => {
-    console.log(`Old theme: ${event.detail.oldState}`);
-    console.log(`New theme: ${event.detail.newState}`);
+    // console.log(`Old theme: ${event.detail.oldState}`);
+    // console.log(`New theme: ${event.detail.newState}`);
 
     if (event.detail.oldState === "auto") {
         document.documentElement.classList.remove("dark");

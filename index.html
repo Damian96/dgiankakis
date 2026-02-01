@@ -24,7 +24,7 @@
 <body>
   <div id="app" class="">
     <header id="header"
-      class="fixed z-50 xl:top-10 3xl:start-1/10 3xl:min-w-0 3xl:w-8/10 xl:start-1/12 xl:min-w-0 xl:w-10/12 xl:p-5 2xs:min-w-full 2xs:top-5 2xs:p-1 xs:p-4 xl:border-1 xl:border-gray-400 xl:rounded-xl">
+      class="fixed z-50 xl:top-10 3xl:start-1/10 3xl:min-w-0 3xl:w-8/10 xl:start-1/12 xl:min-w-0 xl:w-10/12 xl:p-5 2xs:min-w-full 2xs:top-5 2xs:py-1 px-3 xl:border-1 xl:border-gray-400 xl:rounded-xl">
       <nav class="flex items-center w-full">
         <div class="text-3xl font-bold text-white">
           <p class="font-yellowtail text-black dark:text-white">
@@ -32,9 +32,9 @@
             <a href="#" class="md:hidden">DG</a>
           </p>
         </div>
-        <ul class="flex 3xl:space-x-8 xl:space-x-4 2xs:space-x-5 text-black dark:text-white xl:ml-auto xl:mr-8 2xs:ml-auto 2xs:mr-4">
-          <li><a href="#about" class="hover:text-red-400">About</a></li>
-          <li><a href="#projects" class="hover:text-red-400">Projects</a></li>
+        <ul class="flex 3xl:space-x-8 xl:space-x-4 2xs:space-x-5 text-black dark:text-white xl:ml-auto xl:mr-8 2xs:ml-auto 2xs:mr-8">
+          <li><a href="#" class="hover:text-red-400">About</a></li>
+          <!-- <li><a href="#projects" class="hover:text-red-400">Projects</a></li> -->
           <li><a href="#contact" class="hover:text-red-400">Contact</a></li>
         </ul>
         <theme-switch class=""></theme-switch>
@@ -82,8 +82,8 @@
         </div>
       </section>
 
-      <section id="contact" class="home-contact xl:h-screen xl:py-0 md:py-15 border-b-1 border-gray-400 relative">
-        <div class="2xl:hidden absolute inset-0 bg-no-repeat xl:bg-[position:90%_100%] xl:bg-size-[auto_45%] 2xs:bg-bottom md:bg-size-[auto_65%] 2xs:bg-size-[auto_55%]" style="background-image: url('/img/me.png');"></div>
+      <section id="contact" class="home-contact xl:h-screen xl:py-0 py-5 md:py-15 border-b-1 border-gray-400 relative">
+        <div class="hidden md:block absolute inset-0 bg-no-repeat xl:bg-[position:90%_100%] xl:bg-size-[auto_45%] 2xs:bg-bottom md:bg-size-[auto_65%] 2xs:bg-size-[auto_55%]" style="background-image: url('/img/me.png');"></div>
 
         <div class="relative flex flex-row flex-wrap w-full 3xl:start-1/10 3xl:min-w-0 3xl:w-8/10 xl:start-1/12 xl:min-w-0 xl:w-10/12 2xs:min-w-full 3xl:top-2/7 xl:top-1/5 2xs:top-1/6 2xs:p-4">
           <div class="md:w-1/2 2xs:w-full">
@@ -95,9 +95,9 @@
 
             <button id="email-link" role="link" data-encoded-email="ZGFtZ2lhbmtha2lzQGdtYWlsLmNvbQ==" class="cursor-pointer mt-5 bg-red-400 hover:bg-red-500 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out">Gmail</button>
           </div>
-          <div class="md:w-1/2 2xs:w-full md:text-end 2xs:text-center">
+          <div class="md:w-1/2 2xs:w-full md:text-end 2xs:text-center mt-5 md:mt-0">
             <h3 class="text-black dark:text-white 3xl:text-4xl xl:text-3xl md:text-xl 2xs:text-md">Social Media</h3>
-            <ul class="flex flex-row md:justify-end 2xs:justify-start 3xl:space-x-5 xl:space-x-4 2xs:space-x-4 mt-3">
+            <ul class="flex flex-row justify-center md:justify-end 3xl:space-x-5 xl:space-x-4 2xs:space-x-4 mt-3 py-3">
               <li><a href="https://www.linkedin.com/in/dgiankakis/" aria-label="LinkedIn" target="_blank" rel="noopener">
                 <svg class="fill-black dark:fill-white hover:fill-red-400" xmlns="http://www.w3.org/2000/svg" height="25" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
                 <span class="hidden">LinkedIn</span>
