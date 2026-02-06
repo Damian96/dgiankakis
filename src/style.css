@@ -79,8 +79,9 @@ body {
 }
 
 header {
-  will-change: top, backdrop-filter, background-color, border-top-width,
-    padding-top, padding-bottom, border-radius;
+  will-change:
+    top, backdrop-filter, background-color, border-top-width, padding-top,
+    padding-bottom, border-radius;
   transition: all 0.15s ease-in-out;
 }
 
@@ -91,4 +92,19 @@ header.sticky-top {
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 0 0 10px 10px;
+}
+
+#skills {
+  h2 {
+    padding-bottom: 5px;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 50px;
+      height: 3px;
+      background-color: #f87171;
+      bottom: 0;
+      left: 0;
+    }
+  }
 }

@@ -2,6 +2,7 @@ import './style.css'
 import '@mahozad/theme-switch/dist/theme-switch.min.js';
 import { gsap } from 'gsap';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+import { SplitText } from "gsap/SplitText";
 
 /* Theme-related */
 document.addEventListener('DOMContentLoaded', () => {
@@ -137,3 +138,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 // <-- Home Hero GSAP 3D Animation
+
+// Home Hero SplitText GSAP Animation
+gsap.registerPlugin(SplitText);
+document.addEventListener('DOMContentLoaded', () => {
+    const heroHeading = document.querySelector('#home-hero-caption > h1');
+    if (!heroHeading) return;
+
+    let split = SplitText.create(heroHeading, { type: "words, chars" });
+
+    // now animate the words in a staggered fashion
+    gsap.from(split.words, {
+        duration: 1,
+        y: 100,         // animate from 100px below
+        autoAlpha: 0,   // fade in from opacity: 0 and visibility: hidden
+        stagger: 0.05,  // 0.05 seconds between each
+    });
+
+    const heroSubheadings = document.querySelectorAll('#home-hero-caption > p');
+    if (!heroSubheadings.length) return;
+
+    Array.from(heroSubheadings).forEach(p => {
+        let splitSub = SplitText.create(p, { type: "words, chars" });
+
+        // now animate the words in a staggered fashion
+        gsap.from(splitSub.words, {
+            duration: 1,
+            y: 100,         // animate from 100px below
+            autoAlpha: 0,   // fade in from opacity: 0 and visibility: hidden
+            stagger: 0.05,  // 0.05 seconds between each
+            delay: 0.25      // start after a short delay
+        });
+
+    });
+});
+// <-- Home Hero SplitText GSAP Animation
