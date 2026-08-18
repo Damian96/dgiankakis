@@ -5,7 +5,7 @@ export default defineConfig({
     plugins: [
         tailwindcss(),
     ],
-    base: '/dgiankakis/',
+    base: '/',
     build: {
         outDir: 'docs',
         emptyOutDir: true
